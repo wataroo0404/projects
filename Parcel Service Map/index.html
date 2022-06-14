@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Service Map</title>
+    <meta name="viewport" content="initial-scale=1.0" />
+    <meta charset="utf-8" />
+
+    <!-- Load Leaflet CSS -->
+    <link
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      rel="stylesheet"
+    />
+    
+    <!-- Load Carto CSS for legend -->
+    <link
+    rel="stylesheet"
+    href="https://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css"
+    />
+
+    <!-- Load our Carto Map styles -->
+    <link href="./styles.css" rel="stylesheet" />
+
+    <!-- Load Leaflet and Carto libraries -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://libs.cartocdn.com/carto.js/v4.2.0/carto.min.js"></script>
+
+    <!-- Load our JavaScript -->
+<!--     <script defer src="./script.js"></script> -->
+  </head>
+  <body>
+    <div class="map-wrapper">
+  
+      
+      <div id="map"></div>
+      
+      
+<!--       This is the creating the legend  -->
+      <div id="legend" class="cartodb-legend choropleth">
+          <div class="legend-title">Transit Days </div>
+          <ul style="width: 120px; height: auto">
+            <li class="min">1 Day </li>
+            <li class="max">5 Days </li>
+            <li class="graph count">
+              <div class="colors">
+                <div class="quartile" style="background-color:#084594"></div>
+<!--                 <div class="quartile" style="background-color:#2171b5"></div> -->
+                <div class="quartile" style="background-color:#4292c6"></div>
+                <div class="quartile" style="background-color:#6baed6"></div>
+<!--                 <div class="quartile" style="background-color:#9ecae1"></div> -->
+                <div class="quartile" style="background-color:#c6dbef"></div>
+                <div class="quartile" style="background-color:#eff3ff"></div>
+              </div>
+            </li>
+          </ul>
+      </div>
+
+      
+      <div class="layer-picker">
+        
+        <p><h3>Select Node Locations</h3></p>
+        
+        <p>
+          <label for="Atlanta"
+            ><input type="checkbox" name="node" value="Atlanta" />
+            Atlanta</label
+          >
+        </p>
+        
+        <p>
+          <label for="Chicago"
+            ><input type="checkbox" name="node" value="Chicago" />
+            Chicago</label
+          >
+        </p>
+        
+         <p>
+          <label for="Dallas"
+            ><input type="checkbox" name="node" value="Dallas" />
+            Dallas</label
+          >
+        </p>
+        
+        <p>
+          <label for="North Haven"
+            ><input type="checkbox" name="node" value="North Haven" />
+            North Haven</label
+          >
+        </p>
+        
+        <p>
+          <label for="Las Vegas"
+            ><input type="checkbox" name="node" value="Las Vegas" />
+            Las Vegas</label
+          >
+        </p>
+        
+        <p>
+          <label for="Reno">
+            <input type="checkbox" name="node" value="Reno" /> Reno</label
+          >
+        </p>
+               
+        <button id="btn">Apply</button>
+           
+           <br></br>
+      <label>Avg. Zone  </label>  
+
+        <input type="textbox" name="zone_output" id="output_label">
+           <br></br>
+    <label>Avg. Transit Days  </label> 
+      <input type="textbox" name="transit_output" id="output_label">
+           <br></br>
+  <label>Percent 1-2 Day Coverage  </label> 
+    <input type="textbox" name="percent_output" id="output_label">
+ 
+      </div>
+    </div>
+
+    
+    <script  src="script.js"></script>
+  </body>
+
+</html>
